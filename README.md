@@ -1,19 +1,4 @@
-#include <iostream>
-#include <chrono>
-#include <thread>
 
-// Constants
-const int GRAVITY = 1;   // Acceleration due to gravity
-const int JUMP_FORCE = 10;  // Initial jump force
-
-class Player {
-private:
-    int x, y;  // Player position
-    int velocity;  // Vertical velocity
-    bool isJumping;  // Flag to track if the player is jumping
-
-public:
-    Player(int startX, int startY) : x(startX), y(startY), velocity(0), isJumping(false) {}
 
     void jump() {
         if (!isJumping) {
@@ -46,10 +31,7 @@ public:
     void draw() {
         std::cout << "Player position: (" << x << ", " << y << ")\n";
     }
-};
 
-int main() {
-    Player player(10, 0);  // Initial position (10, 0)
 
     char input;
     bool isRunning = true;
@@ -85,7 +67,7 @@ int main() {
 
         // Pause briefly (simulate frame rate)
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    }
+    
 
     return 0;
 }
